@@ -13,7 +13,7 @@ registerFont(path.join(__dirname, 'fonts/FilsonProHeavy.otf'), { family: 'Filson
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Root path 
+// Root path
 app.get('/', (req, res) => {
     res.send(`
         <h1>Welcome to the Dynamic Image & GIF API</h1>
@@ -88,7 +88,7 @@ app.get('/countdown-gif', (req, res) => {
     const ctx = canvas.getContext('2d');
 
     // loop that generates gif images
-    for (let i = totalFrames; i >= 0; i--) {
+    for (let i = 0; i <= totalFrames; i++) {  
         let frameTime = moment.duration(remainingTime.asSeconds() - i, 'seconds');
 
         // Format countdown time
