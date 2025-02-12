@@ -13,6 +13,19 @@ registerFont(path.join(__dirname, 'fonts/FilsonProHeavy.otf'), { family: 'Filson
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Root path 
+app.get('/', (req, res) => {
+    res.send(`
+        <h1>Welcome to the Dynamic Image & GIF API</h1>
+        <p>Currently serving the following endpoints:</p>
+        <ul>
+            <li><strong>Generate Image:</strong> <code>/generate-image?text=Hello&bgColor=%23000000&width=500&height=300</code></li>
+            <li><strong>Countdown GIF:</strong> <code>/countdown-gif?endTime=2025-02-12T15:30:00Z&width=300&height=150&bgColor=%23000000&textColor=%23FFFFFF&duration=10</code></li>
+        </ul>
+        <p>Modify the query parameters to customize your image or GIF output.</p>
+    `);
+});
+
 app.get('/generate-image', (req, res) => {
     const { text = 'Hello, World!', bgColor = '#000000', width = '500', height = '300' } = req.query;
 
