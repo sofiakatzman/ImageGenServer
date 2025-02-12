@@ -2,6 +2,10 @@
   "name": "image-api",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+  "node": "20.x",
+  "npm": "10.x"
+},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,4 +19,5 @@
     "gifencoder": "^2.0.1",
     "moment": "^2.30.1"
   }
+  
 }
